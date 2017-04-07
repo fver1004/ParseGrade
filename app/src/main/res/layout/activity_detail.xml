@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#005B47"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.kiyeon.parsegrade.MainActivity">
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TextView
+            android:text="세부 설정"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        >
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="8"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        >
+
+        <RelativeLayout
+            android:id="@+id/menu0"
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginBottom="3px">
+            <LinearLayout
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <TextView
+                    android:textSize="16sp"
+                    android:text="학기"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/state0"
+                    android:textSize="13sp"
+                    android:text="16년 겨울학기"
+                    android:textColor="@color/colorAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/menu1"
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginBottom="3px">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <TextView
+                    android:textSize="16sp"
+                    android:text="알림 종류"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/state1"
+                    android:textSize="13sp"
+                    android:text="소리/진동/소리+진동/알림창만/"
+                    android:textColor="@color/colorAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/menu2"
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginBottom="3px">
+            <LinearLayout
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <TextView
+                    android:textSize="16sp"
+                    android:text="갱신 주기"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/state2"
+                    android:textSize="13sp"
+                    android:text="10분"
+                    android:textColor="@color/colorAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginBottom="3px">
+
+            <Switch
+                android:id="@+id/select0"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        <TextView
+                android:textSize="16sp"
+                android:gravity="center"
+                android:text="성적란만 알림(해제시 모든항목 알림)"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginBottom="3px">
+
+        <TextView
+                android:textSize="16sp"
+                android:gravity="center"
+                android:text="와이파이 연결되어 있을 때만 알림"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <Switch
+                android:id="@+id/select1"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/menu3"
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginBottom="3px">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <TextView
+                    android:textSize="16sp"
+                    android:text="변경내역 확인 뒤"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/state3"
+                    android:textSize="13sp"
+                    android:text="해당 값 원래 색으로 복원, 종료할때까지 빨간색 유지"
+                    android:textColor="@color/colorAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/menu4"
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginBottom="3px">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <TextView
+                    android:textSize="16sp"
+                    android:text="알림 내용"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/state4"
+                    android:textSize="13sp"
+                    android:text="변경되었단것만/해당과목 + 성적/해당 과목"
+                    android:textColor="@color/colorAccent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginBottom="3px">
+
+            <TextView
+                android:textSize="16sp"
+                android:gravity="center"
+                android:text="갱신 정보 표시"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+            <Switch
+                android:id="@+id/select2"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+
+
+
+
+    </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/buttonToParsing"
+            android:text="시작"
+            android:textColor="#ffffff"
+            android:textSize="17dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+</LinearLayout>
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="47dp"
+        android:id="@+id/progressBar2" />
+</RelativeLayout>

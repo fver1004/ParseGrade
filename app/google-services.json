@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "796842954566",
+    "firebase_url": "https://parsegrade.firebaseio.com",
+    "project_id": "parsegrade",
+    "storage_bucket": "parsegrade.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:796842954566:android:02e883f28b9fbf08",
+        "android_client_info": {
+          "package_name": "com.example.kiyeon.parsegrade"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "796842954566-tf7lbdsj6m7umbrtaj08f4gpgk9sokqv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kiyeon.parsegrade",
+            "certificate_hash": "3B71AD143376247F221079BD7848EC4A04EC0CDE"
+          }
+        },
+        {
+          "client_id": "796842954566-f9nja38jn83pq69739rj312oue29p4d1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoz8CeLHxa9zb1BwLIfe6axQ3yr-ny4ls"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "796842954566-f9nja38jn83pq69739rj312oue29p4d1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
