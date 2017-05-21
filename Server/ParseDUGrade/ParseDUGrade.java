@@ -13,12 +13,12 @@ public class ParseDUGrade {
 	public static void main(String []args) throws Exception{
 		fcmNotify = new FCMNotification();
 		parse = new Parse();
-		parse.setUserInfo("21249409", "1243omg");
+		parse.setUserInfo("type ID", "type PW");
 		
 		
-		time = "½ÃÀÛ ½Ã°£:"+new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new java.util.Date());
+		time = "update: "+new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new java.util.Date());
 		System.out.println(time);
-		/*½ÃÀÛ*/
+		/*ï¿½ï¿½ï¿½ï¿½*/
 		preValue = parse.load();
 		Timer timer = new Timer();
         TimerTask timerTask = new TimerTask() {
@@ -26,29 +26,30 @@ public class ParseDUGrade {
             public void run() {
                 
                 try {
-                	//0.Å©·Ñ¸µ ÈÄ ÆÄ½ÌÇÏ±â
+                	//0.Å©ï¿½Ñ¸ï¿½ ï¿½ï¿½ ï¿½Ä½ï¿½ï¿½Ï±ï¿½
                 	nowValue = parse.load();
                 	
-                	//1. ÀÌÀüÀÇ µ¥ÀÌÅÍ¿Í ºñ±³ÇÏ°í ´Ù¸£´Ù¸é fcm Àü¼Û
+                	//1. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ù¸ï¿½ï¿½Ù¸ï¿½ fcm ï¿½ï¿½ï¿½ï¿½
                 	if(preValue.equals(nowValue)){
-                		//System.out.println("°°¾Æ!");
+                		//System.out.println("ï¿½ï¿½ï¿½ï¿½!");
                 		diff = false;}
                 	else{
-                		//System.out.println("´Þ¶ó!");
+                		//System.out.println("ï¿½Þ¶ï¿½!");
                 		//System.out.println(preValue);
                 		//System.out.println("-------------------------------");
                 		//System.out.println(nowValue);
                 		FCMNotification.pushFCMNotification("");
-                		preValue = nowValue;}
+                		preValue = nowValue;
+                		diff = true;}
                 	
                 }catch(Exception e){e.printStackTrace();timer.cancel();}
                 
-                time = "ÃÖ±Ù °»½Å½Ã°£:"+new java.text.SimpleDateFormat("HHmmss").format(new java.util.Date());
+                time = "ï¿½Ö±ï¿½ ï¿½ï¿½ï¿½Å½Ã°ï¿½:"+new java.text.SimpleDateFormat("HHmmss").format(new java.util.Date());
                 System.out.println(time + ": " + diff);
             }};
         
-        timer.schedule(timerTask, 1000*60, 1000*60*30);//1ÃÊµÚ ½ÃÀÛ, 30ºÐ ÁÖ±â
-        /*Timer´Â ÀÏ´Ü ¿À·ù³¯¶§¸¸ ÁßÁöµÊ.*/
+        timer.schedule(timerTask, 1000*60, 1000*60*30);//1ï¿½Êµï¿½ ï¿½ï¿½ï¿½ï¿½, 30ï¿½ï¿½ ï¿½Ö±ï¿½
+        /*Timerï¿½ï¿½ ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.*/
         
         
         

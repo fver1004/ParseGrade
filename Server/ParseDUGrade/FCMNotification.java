@@ -7,7 +7,7 @@ import org.json.simple.JSONObject;
 
 
 public class FCMNotification {
-	public final static String AUTH_KEY_FCM = "";
+	public final static String AUTH_KEY_FCM = "AAAA_RIKyCc:APA91bFfW8e1OiqYovTLlr099qRj0dirR3LdJxUsgfgGQJ0deKa3eK4pL3kRgIWhjrX4mWjrBvvvQncpzmbBfYyI-Y6HRH82XtF57KYC67Dnrlc26MSVnwF-y-hV8P6yaLoyAx2HzV0F";
 	public final static String API_URL_FCM = "https://fcm.googleapis.com/fcm/send";
 	
 	// userDeviceIdKey is the device id you will query from your database

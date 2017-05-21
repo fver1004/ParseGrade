@@ -54,7 +54,7 @@ public class Parse {
 		
 		Elements elem = doc3.select("table").remove(7).select("tr");
 		
-		s="No	±³°ú¸ñ¸í	¼ö¾÷\r\nNo	±³°ú¸ñ¸í	¼ö¾÷\r\nÆò°¡	°Ô½Ã\r\n"+elem.remove(0).text();
+		s="No	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½	ï¿½ï¿½ï¿½ï¿½\r\nNo	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½	ï¿½ï¿½ï¿½ï¿½\r\nï¿½ï¿½	ï¿½Ô½ï¿½\r\n"+elem.remove(0).text();
 		
 		for(Element el : elem){
 			
@@ -63,8 +63,8 @@ public class Parse {
 		}
 		
 		//System.out.println(s);
-		//System.out.println(s.contains(String.valueOf((char) 160)));//¹¹ÇÏ´Â°Å¿´Áö.. ±î¸Ô¾ú´Ù
-		String test = s.replaceAll(String.valueOf((char) 160), "*");
+		//System.out.println(s.contains(String.valueOf((char) 160)));//ï¿½ï¿½ï¿½Ï´Â°Å¿ï¿½ï¿½ï¿½.. ï¿½ï¿½Ô¾ï¿½ï¿½ï¿½
+		//String test = s.replaceAll(String.valueOf((char) 160), "*");
 		//System.out.println(test);
 		return s;
 		
