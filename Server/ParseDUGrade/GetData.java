@@ -18,7 +18,7 @@ public class GetData {
 		
 		columns = receivedData.split(",");
 		int opt = Integer.parseInt(columns[1]);
-		//0: 파싱중지  1: 파싱요청  2: 파싱값요청  2: 파싱상태요청
+		//0: 파싱중지  1: 파싱요청  2: 파싱값요청  3: 파싱상태요청
 		if(opt == 1 || opt == 0)
 			return protoc(columns[0],Integer.parseInt(columns[1]),columns[2],columns[3]);
 		else if(opt == 2)
@@ -51,14 +51,13 @@ public class GetData {
 		Stopp.stopParseDUGrade();
 		parsList.remove(userKey);
 		
-		System.out.println(Main.date() + " :: Option0 :: parsing stopped");
+		System.out.println(Main.date() + " :: Option0 :: parsing stopped :: " + parsList.size() + " Objects are arrived.");
 	}
 	
 	
 	ParseDUGrade parseDUGrade;
 	/*파싱 실행 메소드-------------------------------------------------*/
 	void start(String userKey, String ID, String PW){
-		parsList = new HashMap<String, ParseDUGrade>();
 		parseDUGrade = new ParseDUGrade();
 		
 		try {parseDUGrade.startParseDUGrade(userKey, ID, PW);
@@ -66,7 +65,7 @@ public class GetData {
 		
 		parsList.put(userKey, parseDUGrade);
 		
-		System.out.println(Main.date() + " :: Option1 :: parsing started");
+		System.out.println(Main.date() + " :: Option1 :: parsing started :: " + parsList.size() + " Objects are arrived.");
 	}
 	
 

@@ -46,7 +46,6 @@ public class ParseDUGrade {
                 }catch(Exception e){e.printStackTrace();timer.cancel();}
                 
                 System.out.println(Main.date() + " :: PARSING :: " + ID + " :: difference :: " + diff);
-                System.out.println("PARSED = " + ID + " - " + time + ": " + diff);
             }};
         
         timer.schedule(timerTask, 1000*60, 1000*60*30);

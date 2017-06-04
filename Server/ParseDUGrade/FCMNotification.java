@@ -1,4 +1,4 @@
-﻿package parseDUGrade;
+package parseDUGrade;
 
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
@@ -7,7 +7,7 @@ import org.json.simple.JSONObject;
 
 
 public class FCMNotification {
-	public final static String AUTH_KEY_FCM = "서버 키 입력";
+	public final static String AUTH_KEY_FCM = "AAAAFAGY7ic:APA91bHva35t1pNz_pACsKyNjQ8L_TzUmqVhItgdCPbHWfPC7B9kfNJkvfCqFIrPRiA1Ok6NWU6ZwlaILZphqbCHf8AtMOae2PyYH8MHmuLbxvOEm0cqGOmrzuX2C5NLRoPisKkVYU-U";
 	public final static String API_URL_FCM = "https://fcm.googleapis.com/fcm/send";
 	
 	// userDeviceIdKey is the device id you will query from your database
