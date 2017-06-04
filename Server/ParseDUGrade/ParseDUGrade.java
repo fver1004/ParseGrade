@@ -4,55 +4,63 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class ParseDUGrade {
-	static String time;
-	static Parse parse;
-	static FCMNotification fcmNotify;
-	static boolean diff = false;
-	static String preValue = "", nowValue="";
+	String time;
+	Parse parse;
+	boolean diff = false;
+	String preValue = "", nowValue="";
+	Timer timer;
 	
-	public static void main(String []args) throws Exception{
-		fcmNotify = new FCMNotification();
+	/* data[0] : 기기 token
+	 * data[1] : 학번
+	 * data[2] : PW
+	 */
+	void startParseDUGrade(String userDeviceIdKey, String ID, String PW) throws Exception{
 		parse = new Parse();
-		parse.setUserInfo("type ID", "type PW");
+		parse.setUserInfo(ID, PW);
 		
 		
-		time = "update: "+new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new java.util.Date());
-		System.out.println(time);
-		/*����*/
+		//주기적으로 파싱하기 전에 한번 파싱
 		preValue = parse.load();
-		Timer timer = new Timer();
+		nowValue = preValue;
+		
+		timer = new Timer();
         TimerTask timerTask = new TimerTask() {
             @Override
             public void run() {
                 
                 try {
-                	//0.ũ�Ѹ� �� �Ľ��ϱ�
+                	//0.파싱 시작
                 	nowValue = parse.load();
                 	
-                	//1. ������ �����Ϳ� ���ϰ� �ٸ��ٸ� fcm ����
+                	//1.전 결과값과 다른게 있는지 비교
                 	if(preValue.equals(nowValue)){
-                		//System.out.println("����!");
                 		diff = false;}
                 	else{
-                		//System.out.println("�޶�!");
-                		//System.out.println(preValue);
-                		//System.out.println("-------------------------------");
-                		//System.out.println(nowValue);
-                		FCMNotification.pushFCMNotification("");
+                		//FCM 메세지 전송
+                		FCMNotification.pushFCMNotification(userDeviceIdKey);
                 		preValue = nowValue;
-                		diff = true;}
+                		diff = true;
+                		
+                	}
                 	
                 }catch(Exception e){e.printStackTrace();timer.cancel();}
                 
-                time = "�ֱ� ���Žð�:"+new java.text.SimpleDateFormat("HHmmss").format(new java.util.Date());
-                System.out.println(time + ": " + diff);
+                System.out.println(Main.date() + " :: PARSING :: " + ID + " :: difference :: " + diff);
+                System.out.println("PARSED = " + ID + " - " + time + ": " + diff);
             }};
         
-        timer.schedule(timerTask, 1000*60, 1000*60*30);//1�ʵ� ����, 30�� �ֱ�
-        /*Timer�� �ϴ� ���������� ������.*/
-        
-        
-        
+        timer.schedule(timerTask, 1000*60, 1000*60*30);
+       
+	}
+	
+	
+	void stopParseDUGrade(){
+		//타이머 중지 후 .. 객체 삭제되게 하자
+		timer.cancel();
+	}
+	
+	String getGrade(){
+		return nowValue;
 	}
 
 }

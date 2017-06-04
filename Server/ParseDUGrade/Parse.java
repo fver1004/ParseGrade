@@ -51,21 +51,20 @@ public class Parse {
 	            .execute();
 		
 		Document doc3=parse2.parse();
-		
 		Elements elem = doc3.select("table").remove(7).select("tr");
+        elem.remove(0);
+        elem.remove(0);
+        s=""+elem.remove(0).text();
 		
-		s="No	�������	����\r\nNo	�������	����\r\n��	�Խ�\r\n"+elem.remove(0).text();
 		
 		for(Element el : elem){
 			
 			s =s + "\r\n";
 			s =s + el.text();
 		}
+		String withOutNbsp = s.replaceAll(String.valueOf((char) 160),"-");
+        s=withOutNbsp;
 		
-		//System.out.println(s);
-		//System.out.println(s.contains(String.valueOf((char) 160)));//���ϴ°ſ���.. ��Ծ���
-		//String test = s.replaceAll(String.valueOf((char) 160), "*");
-		//System.out.println(test);
 		return s;
 		
 		
