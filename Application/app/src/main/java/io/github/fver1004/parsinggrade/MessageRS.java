@@ -17,7 +17,7 @@ import java.net.Socket;
  */
 //통신쪽을 따로 클래스 만들어놓음. 매개변수 optiond으로 기능별 메소드 호출.
 public class MessageRS {
-    static final String IP = "52.79.194.255";//"220.149.13.153"; //"192.168.219.100";
+    static final String IP = "IP";//"220.149.13.153"; //"192.168.219.100";
     static final int Port = 55555; //443;
     Socket client;
     InetSocketAddress ipep;
