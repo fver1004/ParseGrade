@@ -1,6 +1,60 @@
-# ParseGrade
+ParsingGrade
+===================
 
-Parsing own grade of Daegu Univ using <a href=https://jsoup.org>Jsoup.</a></br>
-This app will notify when the grade is modified.</br></br>
+----------
 
-non- tested and non-completed yet.</br>
+
+
+소개 
+-----------------------------------------------------------
+
+학교 성적이 공시되면, 교수님께서 문자 등으로 알려주시지 않는 한, 공시여부를 알 수 없기 때문에 궁금해서  계속 들어가봐야되는 불편함.
+**ParsingGrade** 는 주기적으로 성적을 크롤링-파싱해서 성적의 공시여부를 확인하고 애플리케이션으로 Nofitication을 전송.
+ 
+
+> **사용한 오픈소스 :**
+
+> - [Jsoup](https://jsoup.org) (The MIT License)
+
+
+개발 환경 
+------------------------------------------------------------
+
+
+> **서버**
+> - amazon AWS
+
+> **애플리케이션**
+>  - Android
+
+
+구현 기능
+---------------------
+### <i class="icon-refresh"></i> 서버
+
+애플리케이션으로부터 전송된 계정 정보와 옵션으로 성적 공시를 알림받고 알림 전송.
+> - 다수 클라이언트 -> 다수 파싱 쓰레드 구동
+> - doze mode 때문에 fcm으로 공시알림 전송
+
+### <i class="icon-refresh"></i> 애플리케이션
+
+서버로 성적공시알림 요청, 취소, 성적확인 가능.
+> - fcm에 기기 등록 후 서버로 각 기능에 맞는 옵션값과 함께 정보 전송
+> - 성적 확인 시, 서버에서 성적값 받은 뒤 리스트뷰에 뿌림
+
+
+
+
+----------
+
+스크린샷
+-------------
+
+----------
+![0517](https://user-images.githubusercontent.com/25840417/27570678-ff70827a-5b3a-11e7-9502-f62d1d18798a.png)
+----------
+
+
+
+
+  김기연 [fver1004@gmail.com](mailto:fver1004@gmail.com) 
