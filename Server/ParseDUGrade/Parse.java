@@ -11,14 +11,17 @@ import org.jsoup.select.Elements;
 
 public class Parse {
 	private String id, pw="", s;
+	private String selYear, selHakgi;
 	
-	
-	protected void setUserInfo(String id, String pw){
+	//유저정보 set메소드
+	protected void setUserInfo(String id, String pw, String selYear, String selHakgi){
 		this.id = id;
 		this.pw = pw;
+		this.selYear = selYear;
+		this.selHakgi = selHakgi;
 	}
 	
-	
+	//파싱 로그인하고 세션값 등 저장해서 성적페이지에서 크롤링 파싱
 	protected String load() throws IOException{
 		Connection.Response res = Jsoup.connect("https://sso.daegu.ac.kr/dgusso/ext/tigersweb/login_form.do")
 				.method(Connection.Method.GET)
@@ -41,8 +44,8 @@ public class Parse {
 		cookies = res2.cookies();
 		
 		Response parse2 = Jsoup.connect("https://tigers.daegu.ac.kr:8443/DGUnivProj/std/suup/SUUP140LI02.jsp")
-				.data("selYear","2017",
-						"selHakgi","1",
+				.data("selYear",selYear,
+						"selHakgi",selHakgi,
 						"__EventTarget","btnQuery",
 			    		"__EventArgument","1",
 			    		"__VIEWSTATE.ISPOSTBACK","")

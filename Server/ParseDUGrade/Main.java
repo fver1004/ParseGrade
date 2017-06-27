@@ -9,17 +9,20 @@ import java.net.Socket;
 
 public class Main {
 	/*
+	 *    <클래스별 기능>
+	 * 
 	 * 1. Main class
-	 *    메세지 수신을 받으면 GetData()로 값 전달
+	 *    메세지를 수신 대기. 수신하면 GetData로 값 전달 후 처리된 값 클라이언트로 반환.
 	 * 
 	 * 2. GetData class
-	 *    받은 값(userKey, Option, ID, PW..)으로 옵션별 파싱 시작/중지, 상태값전송, 파싱값전송. 파싱은 각 유저마다 ParseDUGrade에 각각 객체에 쓰레드로 돌림
+	 *    받은 값(userKey, Option, ID, PW..)으로 옵션별 기능 동작. 1)파싱 시작/중지 요청, 2)현재 파싱여부값 확인, 3)성적 확인.
+	 *    파싱은 각 유저 키를 기준으로 ParseDUGrade 각각의 객체에서 파싱 쓰레드 생성됨. HashMap 자료구조로 <유저키, 객체>쌍으로 관리.
 	 * 
 	 * 3. ParseDUGrade class
-	 *    받은 ID와 PW, Option 값으로 주기적 파싱 쓰레드 시작(Parse). 변경이 있으면 알림메세지 FCMNotification
+	 *    받은 ID와 PW, Option 값으로 주기적 파싱 쓰레드 시작(Parse). 변경이 있으면 FCMNotification 클래스에서 알림메소드 호출.
 	 *    
 	 * 4. Parse class
-	 *    주어진 ID와 PW 값으로 파싱하고 파싱된 값 리턴.
+	 *    주어진 ID와 PW 값으로 크롤링-파싱하고 값 리턴.
 	 * 
 	 * 5. FCMNotification class
 	 *    userKey 값을 받고 해당 기기에게 변경되었다는 메세지를 전송.
@@ -30,7 +33,7 @@ public class Main {
 		GetData getdata = new GetData();;
         String message;
         byte[] inpData;
-		int port = 443;
+		int port = 55555;
 		
 		try{
 			ServerSocket server = new ServerSocket();

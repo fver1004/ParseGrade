@@ -13,10 +13,14 @@ public class ParseDUGrade {
 	/* data[0] : 기기 token
 	 * data[1] : 학번
 	 * data[2] : PW
+	 * data[3] : 년
+	 * data[4] : 학기
+	 * data[5] : 진동/소리 해제여부
+	 * data[6] : 주기(분)
 	 */
-	void startParseDUGrade(String userDeviceIdKey, String ID, String PW) throws Exception{
+	void startParseDUGrade(String userDeviceIdKey, String ID, String PW, String selYear, String selHakgi, String noSoundVibe, int period) throws Exception{
 		parse = new Parse();
-		parse.setUserInfo(ID, PW);
+		parse.setUserInfo(ID, PW, selYear, selHakgi);
 		
 		
 		//주기적으로 파싱하기 전에 한번 파싱
@@ -37,7 +41,7 @@ public class ParseDUGrade {
                 		diff = false;}
                 	else{
                 		//FCM 메세지 전송
-                		FCMNotification.pushFCMNotification(userDeviceIdKey);
+                		FCMNotification.pushFCMNotification(userDeviceIdKey, noSoundVibe);
                 		preValue = nowValue;
                 		diff = true;
                 		
@@ -46,10 +50,9 @@ public class ParseDUGrade {
                 }catch(Exception e){e.printStackTrace();timer.cancel();}
                 
                 System.out.println(Main.date() + " :: PARSING :: " + ID + " :: difference :: " + diff);
-                System.out.println("PARSED = " + ID + " - " + time + ": " + diff);
             }};
         
-        timer.schedule(timerTask, 1000*60, 1000*60*30);
+        timer.schedule(timerTask, 1000*60, 1000*60*period);
        
 	}
 	
